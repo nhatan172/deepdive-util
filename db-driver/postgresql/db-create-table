@@ -19,3 +19,4 @@ TableDef=$1; shift
 [[ -n $CREATE_IF_NOT_EXISTS ]] || db-execute "DROP $DROP_VIEW_TYPE  VIEW  $Table CASCADE" &>/dev/null || true
 [[ -n $CREATE_IF_NOT_EXISTS ]] || db-execute "DROP $DROP_TABLE_TYPE TABLE $Table CASCADE" &>/dev/null || true
 exec db-execute "CREATE $CREATE_TABLE_TYPE TABLE ${CREATE_IF_NOT_EXISTS:+IF NOT EXISTS} $Table $TableDef $CREATE_TABLE_EXTRA_CLAUSES"
+
